@@ -1,6 +1,6 @@
 # xget
 
-Have you wver found a file on your Linux filesystem and wondered where
+Have you ever found a file on your Linux filesystem and wondered where
 it came from? `xget` is a simple download tool, that will download a
 file from a URL and save it to current directory. It will furthermore add
 an extended file attribute `user.url` to the file, containing the URL

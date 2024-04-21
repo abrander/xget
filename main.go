@@ -14,6 +14,10 @@ import (
 )
 
 func fileNameFromUrl(url string) string {
+	if strings.Contains(url, "?") {
+		url = url[:strings.Index(url, "?")]
+	}
+
 	return url[strings.LastIndex(url, "/")+1:]
 }
 
@@ -42,7 +46,7 @@ func main() {
 
 	bar := progressbar.DefaultBytes(
 		resp.ContentLength,
-		"downloading",
+		fname,
 	)
 
 	w := io.MultiWriter(f, bar, hash1, hash256)
